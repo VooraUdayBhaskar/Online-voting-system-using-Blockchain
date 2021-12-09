@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Election Results</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" sizes="any" type="image/svg+xml">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 id="timer"></h1>
+    <div class="container" style="width: 700px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center"> ONLINE ELECTIONS </h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table">
+              <thead >
+                <tr >
+                  <th scope="col" >#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults">
+              </tbody>
+            </table>
+            <hr/>
+          <div>
+            
+            <div class="container">
+              <img src="images/1.jpg" alt="Avatar" class="image" style="width:100%">
+              
+              <div class="middle">
+                <div class="text">Ram</div>
+              </div>
+            </div>
+            <br>
+            <div class="des">
+            <p>X party</p>
+            <p>" I’m a people person.I am here for serving you. In my goverment, i can give uou the guaranty that liquor ban, zero corruption."</p>
+            </div>
+            <br>
+            <div class="container">
+              <img src="images/2.jpg" alt="Avatar" class="image" style="width:100%;"  >
+              <div class="middle">
+                <div class="text">Laxman</div>
+              </div>
+           </div>
+           <br>
+           <div class="des">
+             <p>Y party</p>
+             <p>" I’m a philanthropist. I’ve eventually been promoted to a leadership role in almost every event conducted in college because I like to help people. I find fellowmates usually come to me with questions or concerns even when I’m not in a leadership role because if I don’t know the answer, I’ll at least point them in the right direction."
+             </p>
+           </div>
+           <br>
+           <hr>
+            <form onSubmit="App.castVote(); return false;">
+              <div class="form-group" >
+                <label form="candidatesSelect" >Select Candidate</label>
+                <select class="form-control" id="candidatesSelect">
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Vote</button>
+              <hr />
+            </form>
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      <script>
+        var seconds=0;
+        function displayseconds()
+        {
+          seconds +=1;
+          document.getElementById("timer").innerText=seconds;
+        }
+        setInterval(displayseconds,1000);
+        function redirectpage()
+        {
+          window.location="https://www.google.com";
+        }
+        setTimeout('redirectpage()',100000);
+      </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
